@@ -5,16 +5,18 @@ const game = () => {
     let round = 1
     while (round < 6) {
         const computerPlay = choices[Math.floor(Math.random() * choices.length)]
-        let playersChoice = prompt(`Enter your choice: "rock", "paper" or "scissors".\n\nROUND ${round}\n`, '')
+        let playersChoice = prompt(`Enter your choice: "rock", "paper" or "scissors".\n\nROUND ${round}\n`)
         if (playersChoice === null) {
-            let confirmExit = prompt('Are your sure you wanna exit the game?\n\nType Y or click OK to confirm\n', '')
-            let lowerCasedConfirm = confirmExit.toLowerCase()
-            if(lowerCasedConfirm === 'y' || lowerCasedConfirm === '') {
-                console.log({lowerCasedConfirm})
-                console.log({confirmExit})
-                break
-            } else {
+            let confirmExit = prompt('Are your sure you wanna exit the game?\n\nType Y or click OK to confirm\n')
+            if (confirmExit === null) {
                 continue
+            } else {
+                let lowerCasedConfirm = confirmExit.toLowerCase()
+                if(lowerCasedConfirm === 'y' || lowerCasedConfirm === '') {
+                    break
+                } else {
+                    continue
+                }
             }
         }
 
