@@ -18,7 +18,7 @@ const game = () => {
             }
         }
 
-        const lowerCasedPlayersChoise = playersChoice?.toLowerCase()
+        const lowerCasedPlayersChoise = playersChoice?.toLowerCase().trim()
         if(lowerCasedPlayersChoise === 'scissors' || lowerCasedPlayersChoise === 'paper' || lowerCasedPlayersChoise === 'rock') {
             playRound(lowerCasedPlayersChoise, computerPlay, round)
             round++
